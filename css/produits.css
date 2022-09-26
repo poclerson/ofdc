@@ -1,0 +1,159 @@
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// main
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+main {
+    width: 100vw;
+    margin-top: 15vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    color: #2B1A00;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// catégories
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////// placement des images en colonne dans .categorieProduit */
+.categorieProduit {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.produits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*//////////////////////////////// images individuelles */
+.apercu img {
+    width: 25vw;
+    height: calc(4 * 25vw/5);
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    margin-bottom: 2em;
+}
+
+/* s'assurer que le texte est centré par rapport a l'image */
+.apercu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25em;
+}
+
+.apercu {
+    /* mettre un espacement entre le texte et l'image */
+    text-align: center;
+}
+
+.item {
+    margin: 2em;
+    position: relative;
+}
+
+.magasin-titre {
+    text-align: left;
+}
+
+.rappel-courriel * {
+    color: var(--accents);
+}
+
+.magasin-nouveaute {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: -32.5px;
+    right: -32.5px;
+
+    background-color: var(--accents);
+    color: white;
+    font-size: .5em;
+}
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// mobile
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media screen and (max-width: 768px) {
+    /* //////////////////////////////////// apercu, vignette de chaque produit */
+    .categorieProduit {
+        margin: 2em;
+    }
+
+    /* enlever le style des grands ecrans */
+    .apercu {
+        margin: 0;
+        display: grid;
+        grid-template-rows: auto auto;
+    }
+
+    /* grid */
+    .apercu figcaption {
+        grid-row: 2 / -1;
+        grid-column: 1 / 2;
+        position: relative;
+        z-index: 1;
+    }
+
+    .apercu img {
+        grid-row: 1 / 3;
+        grid-column: 1 / 2;
+    }
+
+    .apercu img {
+        /* image carrées */
+        width: 50vw;
+        height: calc(50vw * 4 / 5);
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .apercu img:hover {
+        transform: scale(1);
+    }
+
+    .magasin-caption {
+        /* centrer */
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        /* positionner vers le haut */
+        margin-top: calc(-2em - 10px);
+        z-index: 3;
+
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #FFDC9F;
+
+        width: 50vw;
+        height: 1em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .titreApercu {
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    .ligneDecorative {
+        display: none;
+    }
+
+    .categorieProduit > div:first-child {
+        margin-left: 0;
+    }
+}

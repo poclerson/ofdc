@@ -1,0 +1,86 @@
+main {
+    /* Parce que le header est a position: fixed */
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carte-conteneur {
+    border-radius: 20px;
+    padding: 5em;
+    margin: 2em;
+    width: 40%;
+}
+
+.carte {
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Enlever les margin-block parce qu'ils prennent trop de place et que c'est remplacé par justify-content: space-between */
+.carte-conteneur p {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+.carte-conteneur:nth-of-type(odd) {
+    background: var(--fond);
+    border: 5px solid var(--accents);
+}
+
+.carte-conteneur:nth-of-type(odd) *{
+    color: var(--accents);
+}
+
+.carte-conteneur:nth-of-type(even) {
+    background: var(--accents);
+    color: var(--fond);
+}
+
+.carte-conteneur:nth-of-type(even) * {
+    color: var(--fond);
+}
+
+.carte-conteneur:nth-of-type(even) input[type=number] {
+    background-color: var(--accents);
+    border: 2px solid var(--fond);
+}
+
+@media screen and (max-width: 768px) {
+    .carte-conteneur {
+        width: 100vw !important;
+        border-radius: 0;
+        box-sizing: content-box;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .carte {
+        width: 50%;
+    }
+}
+
+/* Écrans larges, mais pas hauts */
+@media screen and (max-height: 980px) {
+    @media screen and (min-width: 800px) {
+        /* 
+            Mettre une hauteur minimale, sinon le contenu se fait écraser 
+            Réduire le padding proportionnellement avec la très petite taille
+        */
+        .carte-conteneur {
+            min-height: 9em;
+            padding: .5em !important;
+        }
+
+        .carte {
+            padding: .5em !important;
+        }
+    }
+}

@@ -1,0 +1,157 @@
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// body
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+body {
+    /* empecher de depasser */
+    object-fit: cover;
+    background-size: cover;
+    
+    animation-name: changerImage;
+    animation-timing-function: cubic-bezier(0.9, 0.1, 0.1, 0.9);
+    animation-duration: 60s;
+    animation-iteration-count: infinite; 
+}
+
+@keyframes changerImage {
+    0%, 
+    100% {
+        background-image: url(../images/Nouveautes/buche-noel.jpg);
+    }
+
+    10% {
+        background-image: url(../images/Nouveautes/cannellonis-veau.jpg);
+    }
+
+    20% {
+        background-image: url(../images/Nouveautes/tarte-pommes.jpg);
+    }
+
+    30% {
+        background-image: url(../images/Desserts/baklavas.jpg);
+    }
+
+    40% {
+        background-image: url(../images/Sauces/tomate.jpg);
+    }
+
+    50% {
+        background-image: url(../images/Desserts/muffins-citron.jpg);
+    }
+
+    60% {
+        background-image: url(../images/Specialites/eggrolls.jpg);
+    }
+
+    70% {
+        background-image: url(../images/Specialites/general-tao.jpg);
+    }
+
+    80% {
+        background-image: url(../images/Desserts/muffins-canneberges.jpg);
+    }
+
+    90% {
+        background-image: url(../images/Nouveautes/saumon-wellington.jpg);
+    }
+
+    /* a etre réglé. les images ne gardent pas leur aspect ratio meme avec object-fit: cover */
+    0%,
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90%,
+    100% {
+        object-fit: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// main
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+main,
+.intro-conteneur {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-conteneur {
+    background-color: rgba(43, 26, 0, 0.8);
+    height: 10em;
+    padding: 2em;
+}
+
+main * {
+    color: var(--accents-police);
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    @keyframes changerImage {
+        0%, 
+        100% {
+            background-image: url(../images/Desserts/baklava_miel.jpg);
+        }
+
+        10% {
+            background-image: url(../images/Specialites/poutine-cantons.jpg);
+        }
+
+        20% {
+            background-image: url(../images/Nouveautes/tarte-pacanes);
+        }
+
+        30% {
+            background-image: url(../images/Specialites/galettes-vege.jpg);
+        }
+
+        40% {
+            background-image: url(../images/Sauces/tomate.jpg);
+        }
+
+        50% {
+            background-image: url(../images/Desserts/muffin_citron.jpg);
+        }
+
+        60% {
+            background-image: url(../images/Specialites/eggrolls.jpg);
+        }
+
+        70% {
+            background-image: url(../images/Specialites/general-tao.jpg);
+        }
+
+        80% {
+            background-image: url(../images/Nouveautes/buche-noel.jpg);
+        }
+
+        90% {
+            background-image: url(../images/Specialites/saumon-wellington.jpg);
+        }
+
+        0%,
+        10%,
+        20%,
+        30%,
+        40%,
+        50%,
+        60%,
+        70%,
+        80%,
+        90%,
+        100% {
+            background-position: center;
+        }
+    }
+}

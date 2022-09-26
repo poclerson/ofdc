@@ -1,0 +1,442 @@
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// fontes
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Comfortaa */
+@font-face {
+    font-family: Comfortaa;
+    src: url(../fontes/Comfortaa/Comfortaa_Regular.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url(../fontes/Comfortaa/Comfortaa_Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url(../fontes/Comfortaa/Comfortaa_Thin.ttf);
+    font-weight: 300;
+}
+
+/* Monsterrat */
+@font-face {
+    font-family: Monsterrat;
+    src: url(../fontes/Montserrat/Montserrat-Regular.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Monsterrat;
+    src: url(../fontes/Montserrat/Montserrat-Bold.ttf);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Mosterrat;
+    src: url(../fontes/Montserrat/Montserrat-SemiBold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Monsterrat;
+    src: url(../fontes/Montserrat/Montserrat-Light.ttf);
+    font-weight: 300;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// général
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+:root {
+    --fond: #FFDC9F;
+    --accents: #2B1A00;
+    --accents-police: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+    text-align: justify;
+    text-decoration: none;
+    overflow-x: hidden;
+
+    /* safari qui fait chier */
+    -webkit-text-size-adjust: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--fond);
+    font-family: Monsterrat, Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    
+    margin: 0;
+
+    font-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: Monsterrat, Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 4em;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2em;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 1.75em;
+}
+
+h4 {
+    font-weight: 300;
+    font-size: 1.25em;
+}
+
+h5 {
+    font-weight: 100;
+}
+
+h6 {
+    font-weight: lighter;
+}
+
+input[type = "radio"], input[type = checkbox] {
+    display: none;
+}
+
+.actif {
+    color: var(--fond);
+}
+
+.icone {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 1;
+}
+
+.icone-conteneur {
+    height: inherit;
+    justify-self: center;
+    align-self: center;
+}
+
+.icone.fa-bars,
+.icone .fa-bars {
+    margin-top: 500px;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+::selection {
+    background-color: var(--accents-police);
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// header
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+header {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    z-index: 5;
+    width: 100vw;
+}
+
+header * {
+    color: var(--accents-police);
+    text-decoration: none;
+}
+
+#principal {
+    background-color: var(--accents);
+    min-width: 70vw;
+    max-width: 80vw;
+    height: 5em;
+    border-radius: 0px 0px 10px 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* comme selectionner #accueil, #produits, #livraison et #apropos*/
+#principal > div {
+    width: 25%;
+    text-align: center;
+}
+
+/* Icone de panier
+ * Menu "burger" de navigation mobile
+ * "X" pour fermer les boite-info
+ * Symboles de sites dans à propos
+ */
+.icone {
+    display: flex;
+    margin-top: 5px;
+    color: var(--accents);
+    font-size: 3em;
+}
+
+.logo {
+    height: 4.75em;
+    object-fit: cover;
+    margin-top: .25em;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// produits
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.direction-menu {
+    transform: translateY(-10vh);
+}
+
+#produits-menu {
+    border-radius: 0 0 10px 10px;
+
+    position: fixed;
+    top: 3.5rem;
+
+    display: none;
+
+    background-color: var(--accents);
+    z-index: 5;
+}
+
+/* enlever les styles de base */
+#produits-menu ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 1em;
+}
+
+#produits-menu li {
+    padding: 1em;
+    border-radius: 10px;
+}
+
+#produits-menu li:hover {
+    background-color: var(--fond);
+    color: var(--accents);
+}
+
+#produits:hover #produits-menu {
+    display: flex;;
+}
+
+#produits-menu,
+#produits:hover ~ #produits-menu {
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
+
+#menu input,
+#menu label{
+    /* cacher vu qu'on l'utilise juste pour le mobile */
+    display: none;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// main
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+main {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// footer
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+footer {
+    background-color: var(--accents);
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+}
+
+footer * {
+    color: var(--fond);
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// animations
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.agrandir-hover {
+    transform: scale(1);
+    transition-timing-function: ease-in-out;
+    transition-duration: .1s;
+}
+
+.agrandir-hover:hover {
+    transform: scale(1.1);
+    transition-timing-function: ease-in-out;
+    transition-duration: .1s;
+    cursor: pointer;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// plus grands écrans
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (min-width: 1400px) {
+
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// tablettes
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 3.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.325em;
+    }
+
+    h4 {
+        font-size: 1.125em;
+    }
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// mobile
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    header {
+        background-color: var(--accents);
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        /* changer la hauteur pour que l'image puisse rentrer
+         * en format ordi, le logo est la même hauteur que le header
+         * ici, on veut que le header soit un peu plus haut pour laisser des marges en haut en en bas
+        */
+
+        padding-top: .25em;
+        padding-bottom: 1.5em;
+        height: 6em;
+        box-sizing: border-box;
+    }
+
+    /* Menu principal de navigation devient vertical.
+     * De base, il est caché. Quand on appuie sur le bouton du menu, il s'ouvre 
+     */
+    #principal { 
+        width: 40vw;
+        min-width: unset;
+        height: 90vh;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding-left: 5vw;
+        
+        /* cacher au debut */
+        transform: translateX(100%);
+    }
+
+    /* separer les éléments */
+    #principal > * {
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+
+    .logo{
+        order: 1;
+        filter: brightness(0) invert(1);
+    }
+
+    #menu {
+        order: 3;
+    }
+
+    /* Uniformiser, toutes les icones sont rendues les uesn à côté des autres */
+    .icone {
+        color: var(--accents-police);
+    }
+
+    #menu label[for=ouvrir-menu] {
+        display: inline-block;
+    }
+
+    #ouvrir-menu:checked ~ #principal {
+        transform: translateY(0);
+    }
+
+    #ouvrir-menu ~ #principal,
+    #ouvrirmenu:checked ~ #principal {
+        transition-duration: .3s;
+        transition-timing-function: ease-in-out;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        position: initial;
+    }
+}
+
+/*//////////////////////////////// ligne decorative apres chaque section */
+.ligneDecorative {
+    position: relative;
+}
+
+.ligneDecorative:after {
+    content: "";
+    position: absolute;
+    left: 10vw;
+    top: -3vh;
+    width: 80vw;
+    height: 2px;
+    background-color: var(--accents);
+}

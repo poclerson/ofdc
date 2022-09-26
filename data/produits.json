@@ -1,0 +1,235 @@
+{
+    "Soupes": [
+        {
+            "titre": "Soupe noces à l'italienne",
+            "sousTitre": "Petites boulettes de veau dans un bouillon de poulet, agrémenté de confettis de nouilles et d’épinards.",
+            "quantite": "500ml",
+            "prix": 3.49,
+            "nom": "noces-italienne",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Soupe minestrone des cantons",
+            "sousTitre": "Soupe de légumes coupés avec boulettes d'agneau, petites nouilles et haricots rouges dans un bouillon de boeuf.",
+            "quantite": "500ml",
+            "prix": 4.19,
+            "nom": "minestrone",
+            "nouveaute": false
+        }
+    ],
+
+    "Specialites": [
+        {
+            "titre": "Galettes végétariennes",
+            "sousTitre": "Galettes de gruau, légumes, graines, fromage et oeufs.",
+            "quantite": "2 unités",
+            "prix": 4.99,
+            "nom": "galettes-vege",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Arancinis",
+            "sousTitre": "Boulettes de risotto frites farcies de fromage",
+            "quantite": "6 unités",
+            "prix": 12.49,
+            "nom": "arancinis",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Général Tao",
+            "sousTitre": "Morceaux de poitrine de poulet ou de Tofu légèrement pané avec une sauce aigre-douce légèrement piquante, accompagnée de poivrons, oignons verts et graine de sésames.",
+            "quantite": "550g",
+            "options": [
+                {
+                    "saveur": "Poulet",
+                    "prix": 12.49,
+                    "valeur": "poulet"
+                },
+
+                {
+                    "saveur": "Tofu",
+                    "prix": 11.99,
+                    "valeur": "tofu"
+                }
+            ],
+            "nom": "general-tao",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Nems",
+            "sousTitre": "Rouleau impérial farcie d’un mélange de légumes(choux, carottes oignons) et/ou poulet confit",
+            "quantite": "6 unités",
+            "options": [
+                {
+                    "saveur": "Légumes",
+                    "prix": 4.99,
+                    "valeur": "legumes"
+                },
+
+                {
+                    "saveur": "Poulet confit",
+                    "prix": 5.99,
+                    "valeur": "poulet"
+                }
+            ],
+            "nom": "nems",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Egg rolls",
+            "sousTitre": "Plusieurs variétés",
+            "quantite": "6 unités",
+            "options": [
+                {
+                    "saveur": "Légumes",
+                    "prix": 4.79,
+                    "valeur": "legumes"
+                },
+
+                {
+                    "saveur": "Porc",
+                    "prix": 4.99,
+                    "valeur": "porc"
+                }
+            ],
+            "nom": "eggrolls",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Cannellonis au veau",
+            "sousTitre": "Pâtes farcies au fromage ricotta, veau et épinards, avec sauce tomate, fromage mozzarella et parmesan.",
+            "quantite": "4 unités - 500g",
+            "prix": 11.99,
+            "nom": "cannellonis-veau",
+            "nouveaute": false
+        },
+    
+
+        {
+            "titre": "Lasagne sauce viande",
+            "sousTitre": "Généreuse et confectionnée avec notre sauce à la viande. Parfait pour deux à trois personnes.",
+            "quantite": "850g",
+            "prix": 11.99,
+            "nom": "lasagne-viande",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Poutine des Cantons",
+            "sousTitre": "Après plusieurs tests voici notre Poutine Des cantons. Sauce à base de fond brun de veau et boeuf. Seulement 18 minutes de cuisson!",
+            "quantite": "550g",
+            "prix": 8.99,
+            "nom": "poutine-cantons",
+            "nouveaute": true
+        },
+
+        {
+            "titre": "Saumon Wellington",
+            "sousTitre": "Pavé de saumon Atlantique cuit dans une pâte feuilletée avec duxelle de champignons et sauce Béchamel. Pour deux personnes.",
+            "quantite": null,
+            "prix": 18.99,
+            "nom" :"saumon-wellington",
+            "nouveaute": false
+        }
+    ],
+
+    "Sauces": [
+        {
+            "titre": "Sauce douce",
+            "sousTitre": "Sauce à base de citrouille pour accompagner les nems et egg rolls.",
+            "quantite": "250ml",
+            "prix": 2.69,
+            "nom": "douce",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Sauce épicée",
+            "sousTitre": "Sauce à base de sauce tomate et de piment fort pour accompagner les nems et egg rolls.",
+            "quantite": "250ml",
+            "prix": 2.69,
+            "nom": "epicee",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Sauce à la viande",
+            "sousTitre": "Sauce pour accompagner les pâtes.",
+            "quantite": "500ml",
+            "prix": 7.29,
+            "nom": "viande",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Sauce tomate",
+            "sousTitre": "Sauce pour accompagner les arancinis.",
+            "quantite": "250ml",
+            "prix": 3.99,
+            "nom": "tomate",
+            "nouveaute": false
+        }
+    ],
+
+    "Desserts": [
+        {
+            "titre": "Carrés au sirop d'érable",
+            "sousTitre": null,
+            "quantite": "350g",
+            "prix": 5.25,
+            "nom": "carres-erable",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Gâteau aux carottes",
+            "sousTitre": "Gâteau aux carottes et son glaçage à la crème. Bon pour quatre à six personnes.",
+            "quantite": "450g",
+            "prix": 8.5,
+            "nom": "gateau-carottes",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Muffins orange canneberges",
+            "sousTitre": null,
+            "quantite": "6 unités",
+            "prix": 8.29,
+            "nom": "muffins-canneberges",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Muffins citron pavot",
+            "sousTitre": null,
+            "quantite": "6 unités",
+            "prix": 8.29,
+            "nom": "muffins-citron",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Baklavas",
+            "sousTitre": "Dessert étagé de pâte feuilletée au beurre, de noix et d'épices.",
+            "quantite": "6 unités",
+            "prix": 7.99,
+            "nom": "baklavas",
+            "nouveaute": false
+        },
+
+        {
+            "titre": "Tarte pacanes érable",
+            "sousTitre": "Petite tarte aux pacanes avec sirop d’érable pur. Pour deux à trois personnes.",
+            "quantite": "250g",
+            "prix": 7.99,
+            "nom": "tarte-pacanes",
+            "nouveaute": false
+        }
+    ]
+}

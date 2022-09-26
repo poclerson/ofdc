@@ -1,0 +1,212 @@
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// général
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.magasin-titre {
+    color: var(--fond);
+}
+
+.magasin-sous-titre {
+    color: var(--accents-police);
+}
+
+/* Boite qui contient la quantité d'un produit et l'input qui permet à l'utilisateur de choisir combien il en veut */
+.magasin-info-quantite {
+    display: flex;
+    justify-content: space-between;
+}
+
+.magasin-quantite {
+    color: var(--fond);
+}
+
+.magasin-quantite-desiree {
+    width: 2em;
+}
+
+.magasin-titre,
+.magasin-sous-titre,
+.magasin-quantite {
+    text-align: left;
+}
+
+.magasin-choisir-option {
+    font-size: 1.5em;
+    width: 10em;
+    background-color: var(--fond);
+    color: var(--accents);
+}
+
+.magasin-prix {
+    background-color: var(--fond);
+    color: var(--accents);
+    border-radius: 50%;
+    text-align: center;
+    width: 3.5em;
+    height: 3.5em;
+    line-height: 3.25em;
+
+    font-weight: 900;
+}
+
+.panier-ajouter {
+    color: var(--accents-police);
+}
+
+.bouton-quitter {
+    color: var(--fond);
+    position: absolute;
+    top: 3vw;
+    right: 3vw;
+    font-size: 3em;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// positionnement de boite-info
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.boite-info {
+    /* toutes les boites doivent avoir les meme dimensions */
+    width: 60vw;
+    height: 50vh;
+
+    position: fixed;
+
+    /* centrer */
+    top: 25%;
+    left: 20vw;
+
+    /* cacher au depart */
+    transform:  scale(0);
+
+    z-index: 4;
+    background-color: var(--accents);
+    border-radius: 10px;
+    /* border: 20px solid rgba(43, 26, 0, 0.166); */
+    box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.5); 
+
+
+    /* effet avec l'image */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// positionnement des conteneurs dans boite-info
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Contient la majorité des informations des boite-info */
+.contenu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.magasin-image {
+    object-fit: cover;
+    width: 50%;
+}
+
+/* Toutes les informations sur un article
+ * Inclut le titre, sous-titre, unités, prix, le bouton d'ajout au panier et le choix des options
+ */
+.magasin-info {
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 1em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Toutes les informations "textuelles" sur un article
+ * Inclut le titre, sous-titre, les unités et le choix des options
+ */
+.magasin-info-texte {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    max-height: 70%;
+}
+
+/* Toutes les informations d'icone sur un article
+ * Inclut le prix et le bouton d'ajout au panier 
+ */
+.magasin-info-icones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.magasin-info-icones > * {
+    align-self: flex-end;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// checkbox
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.ouvrir-info:checked ~ .boite-info {
+    transform:  scale(1);
+}
+
+.boite-info,
+.ouvrir-info:checked ~ .boite-info {
+    transition-duration: .25s;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// grands écrans
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (min-width: 1400px) {
+    .magasin-image {
+        width: 70%;
+    }
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// mobile
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 768px) {
+    .boite-info > * {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    .boite-info {
+        width: 100vw;
+        height: 75vh;
+        border-radius: 0px;
+
+        /* Hauteur du header */
+        top: 6em;
+        left: 0;
+    }
+
+    /* Mettre les deux sections de .boite-info à 100vw pour prendre tout la largeur */
+    .contenu > *,
+    .contenu {
+        width: 100vw;
+    }
+
+    /* Ratio de taille entre le texte et l'image */
+    .magasin-info {
+        flex: 3;
+    }
+
+    .magasin-image {
+        flex: 4;
+        max-width: unset;
+        max-height: 45%;
+    }
+
+    .magasin-choisir-option {
+        font-size: 1em;
+    }
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// très petit mobile
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 380px) {
+    /* Ne laisser qu'une seule ligne de texte sur les très petits appareils
+     * Sert à éviter de briser le UI dans les cas des textes plus longs
+     */
+    .magasin-sous-titre {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

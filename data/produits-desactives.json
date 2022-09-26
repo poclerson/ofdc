@@ -1,0 +1,19 @@
+{
+    "Desserts" : [
+        {
+            "titre": "Pouding chômeur",
+            "sousTitre": "Au vrai sirop d'érable",
+            "quantite": "550g",
+            "prix": 5.79,
+            "nom": "pouding-erable"
+        },
+
+        {
+            "titre": "Tarte aux pommes",
+            "sousTitre": "Pommes du Québec",
+            "quantite": "400g",
+            "prix": 4.99,
+            "nom": "tarte-pommes"
+        }
+    ]
+}

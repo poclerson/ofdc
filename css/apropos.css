@@ -1,0 +1,87 @@
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// général
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* nous */
+.icone-lien {
+    color: var(--accents-police);
+    font-size: 2em;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// sections
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+main > * {
+    margin-bottom: 5rem;
+}
+
+main {
+    justify-content: space-around;
+}
+
+/* ########## Section avec la photo de Stéfanie et François et leurs descriptions ########## */
+.photo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Égaliser tous les items flex, les deux boites de description et la photo */
+.photo > * {
+    /* Chaque flex item prend 1/3 de la largeur au départ */
+    flex: 1 2 calc(100%/3);
+
+    /* Sinon la photo est trop grosse??? */
+    width: 20%;
+}
+
+.photo img {
+    /* La photo commence à 50% de largeur */
+    flex: 2 1 50%;
+
+    /* Flipper la photo */
+    transform: scaleX(-1);
+    border-radius: 20px;
+}
+
+/* ########## Cartes d'informations ########## */
+.desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    padding: 2em;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+/* ########## Informations sous la photo ########## */
+#couple {
+    width: 40vw;
+}
+
+#dev h3,
+#dev h4,
+#dev .liens {
+    text-align: left;
+}
+
+.liens {
+    display: flex;
+}
+
+.liens > * {
+    margin-right: 1em;
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+    /* Les boites d'information pour les différentes personnes prenent maintenant toute la page */
+
+    .photo {
+        flex-direction: column;
+    }
+
+    .photo img {
+        width: 100%;
+        border-radius: 0;
+    }
+}

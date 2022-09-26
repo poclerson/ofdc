@@ -1,0 +1,215 @@
+#panier {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.panier-item {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    height: 20vh;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.panier-item-infos {
+    width: 50%;
+    padding: 1em;
+}
+
+.panier-item img {
+    height: 100%;
+    border-radius: 20px;
+}
+
+/* éviter que ca prenne trop de place */
+.panier-sous-titre {
+    height: 1em;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+.panier-titre, 
+.panier-sous-titre,
+.panier-item-infos {
+    text-align: left;
+}
+
+.panier-quantite {
+    width: 3em;
+}
+
+/* ########## Fenetre popup à chaque interaction avec le panier */
+.panier-popup {
+    /* Style */
+    background: var(--accents);
+    color: var(--accents-police);
+    padding: 1em;
+    border-radius: 10px;
+    border: 2px solid var(--fond);
+
+    /* Positionnnement */
+    max-height: 1em;
+    max-width: 50vw;
+
+    vertical-align: middle;
+
+    position: fixed;
+    bottom: 8vh;
+    right: 3vw;
+
+    /* une seule ligne */
+    overflow: hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    z-index: 6;
+
+    /* transition */
+    transform: translate(100vw, 0);
+    opacity: 0;
+}
+
+.panier-popup-active {
+    opacity: 100%;
+    transform: translate(0, 0);
+}
+
+.panier-popup, .panier-popup-active {
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+
+.panier-info-acheter {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.panier-cacher {
+    display: none;
+}
+
+#panier-total {
+    text-align: right;
+    margin: 0 auto;
+}
+
+#panier-acheter {
+    background: none;
+    border: 5px solid #2B1A00;
+    border-radius: 10px;
+    margin: 3em;
+    padding: 1em;
+    cursor: pointer;
+    margin-bottom: 10em;
+}
+
+#info-courriel {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5em;
+}
+
+#info-courriel > * {
+    display: flex;
+    flex-direction: inherit;
+    margin: 1em;
+}
+
+.input-courriel {
+    background-color: var(--accents);
+    color: var(--accents-police);
+    border-radius: 10px;
+}
+
+.input-courriel:focus {
+    background-color: var(--accents);
+    color: var(--accents-police);
+}
+
+#commentaires {
+    resize: none;
+}
+
+#type-livraison {
+    width: 10em;
+    height: 5em;
+    text-align-last: center;
+    background-color: var(--accents);
+    color: var(--accents-police);
+    margin: 1em;
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+    #panier-total {
+        font-size: 1.75em;
+    }
+
+    /* Taille générale des polices */
+    #panier {
+        font-size: .9em;
+    }
+
+    .panier-titre {
+        font-size: 1.5em;
+    }
+
+    /* Agrandir les "cartes" d'items ajoutés au panier, sinon l'information dépasse souvent */
+    .panier-item {
+        height: 25vh;
+    }
+
+    /* Aligner le texte et l'image */
+    .panier-item-infos {
+        padding-top: 0;
+    }
+
+    /* Empêcher l'image de prendre trop de place */
+    .panier-item img {
+        object-fit: cover;
+        max-width: 30%;
+    }
+
+    /* Réduire la taille du bouton X */
+    .panier-retirer {
+        font-size: .75em;
+    }
+
+    .panier-sous-titre {
+        
+    }
+
+    /* Changer l'animation de pop-up pour qu'elle vienne du bas et s'affiche au bas de l'écran, parfaitement fittée sous boite-info */
+    .panier-popup {
+        /* L'animation vient d'en-bas */
+        transform: translate(0, 100vh);
+
+        /* Coller à la fenêtre */
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+
+        /* Faire prendre tout l'espace disponible */
+        width: 91vw;
+        max-width: 100vw;
+
+        /* 75vh = .boite-info
+         * 6em = header
+         */
+        height: calc(100vh - 75vh - 6em);
+    }
+
+    .panier-popup-active {
+        opacity: 100%;
+        transform: translate(0, 0);
+    }
+}
